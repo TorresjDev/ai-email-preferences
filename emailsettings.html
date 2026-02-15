@@ -28,10 +28,15 @@
 											class="form-check-input"
 											type="checkbox"
 											id="toggleAll"
+											aria-describedby="toggleAllHelp"
+											aria-controls="criticalAlerts specialOffers irsNotifications monthlyNewsletter"
 										/>
 										<label class="form-check-label fw-semibold" for="toggleAll">
 											Select / Deselect All
 										</label>
+										<div id="toggleAllHelp" class="form-text">
+											Toggles all email preference options below.
+										</div>
 									</div>
 
 									<fieldset class="border rounded-3 p-3">
@@ -115,8 +120,11 @@
 			);
 
 			const updateToggleAll = () => {
-				const allChecked = preferenceBoxes.every((box) => box.checked);
-				toggleAll.checked = allChecked;
+				const checkedCount = preferenceBoxes.filter((box) => box.checked)
+					.length;
+				toggleAll.checked = checkedCount === preferenceBoxes.length;
+				toggleAll.indeterminate =
+					checkedCount > 0 && checkedCount < preferenceBoxes.length;
 			};
 
 			toggleAll.addEventListener("change", (event) => {
@@ -129,6 +137,8 @@
 			preferenceBoxes.forEach((box) => {
 				box.addEventListener("change", updateToggleAll);
 			});
+
+			updateToggleAll();
 		</script>
 	</body>
 </html>

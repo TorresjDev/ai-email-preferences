@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Email Preferences</title>
+	</head>
+	<body>
+		<main>
+			<h1>Email Preferences</h1>
+			<form
+				action="https://www.w3schools.com/action_page.php"
+				method="POST"
+			>
+				<label>
+					<input type="checkbox" id="toggleAll" />
+					Select / Deselect All
+				</label>
+
+				<fieldset>
+					<legend>Choose the email communications you want to receive</legend>
+
+					<label>
+						<input
+							type="checkbox"
+							name="criticalAlerts"
+							value="yes"
+							class="preference"
+						/>
+						Critical alerts and notifications about your tax return
+					</label>
+
+					<label>
+						<input
+							type="checkbox"
+							name="specialOffers"
+							value="yes"
+							class="preference"
+						/>
+						Information about special offers for tax services
+					</label>
+
+					<label>
+						<input
+							type="checkbox"
+							name="irsNotifications"
+							value="yes"
+							class="preference"
+						/>
+						Receive notifications of IRS changes and deadlines
+					</label>
+
+					<label>
+						<input
+							type="checkbox"
+							name="monthlyNewsletter"
+							value="yes"
+							class="preference"
+						/>
+						Learn from a monthly tax newsletter with tax news and tips
+					</label>
+				</fieldset>
+
+				<button type="submit">Save Preferences</button>
+			</form>
+		</main>
+
+		<script>
+			const toggleAll = document.querySelector("#toggleAll");
+			const preferenceBoxes = Array.from(
+				document.querySelectorAll(".preference")
+			);
+
+			const updateToggleAll = () => {
+				const allChecked = preferenceBoxes.every((box) => box.checked);
+				toggleAll.checked = allChecked;
+			};
+
+			toggleAll.addEventListener("change", (event) => {
+				const { checked } = event.target;
+				preferenceBoxes.forEach((box) => {
+					box.checked = checked;
+				});
+			});
+
+			preferenceBoxes.forEach((box) => {
+				box.addEventListener("change", updateToggleAll);
+			});
+		</script>
+	</body>
+</html>

@@ -1,29 +1,34 @@
-# Email Preferences Form
+# CIDM-4390: Email Preferences Webpage
 
-## Project Description
-This project provides a professional, responsive email preferences form for a modern tax service website. Users can select the communications they want to receive, toggle all selections at once, and submit the form via POST for testing.
+## Description
+A professional, accessible tax service email settings form built using AI-assisted development.
 
-## Technologies Used
+## Stack
 - HTML5
 - Bootstrap 5
 - JavaScript
 
-## Features Implemented
-- Email preference checkboxes
-- Select / Deselect All functionality
-- Form submission using POST
-- Bootstrap styling
+## Features
+- Select / Deselect All master checkbox to manage preferences.
+- Individual email preference toggles with accessible labels.
+- POST form submission to a test endpoint for data verification.
+- Responsive layout for mobile, tablet, and desktop screens.
+- Subtle micro-interactions and reduced-motion support.
 
-## Run Locally (Live Server)
-1. Open the project folder in VS Code.
-2. Install the Live Server extension if it is not already installed.
-3. Open the emailsettings.html file.
-4. Right-click in the editor and select "Open with Live Server".
-5. The page will launch in your default browser.
+## Setup
+### Run with VS Code Live Server
+1. Open this folder in VS Code.
+2. Install the Live Server extension if needed.
+3. Right-click `emailsettings.html` and choose "Open with Live Server".
+4. Use the local URL provided by Live Server to view the page.
 
-## Deploy via GitHub Pages
-1. Push the project to a GitHub repository.
-2. In the repository, go to Settings > Pages.
-3. Under "Build and deployment", choose "Deploy from a branch".
-4. Select the "main" branch and the root folder, then click Save.
-5. After deployment completes, visit the GitHub Pages URL provided by GitHub.
+### Deploy with GitHub Pages
+1. Push this repository to GitHub if it is not already published.
+2. In GitHub, go to Settings > Pages.
+3. Under "Build and deployment", set the source to "Deploy from a branch".
+4. Choose the `main` branch and the `/ (root)` folder, then save.
+5. Wait for the GitHub Pages URL to appear, then open it in a browser.
+
+## Notes
+- The form posts to `https://www.w3schools.com/action_page.php` for testing.
+- Update the action URL when integrating with a real backend.

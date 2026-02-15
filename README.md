@@ -19,7 +19,7 @@ A professional, accessible tax service email settings form built using AI-assist
 ### Run with VS Code Live Server
 1. Open this folder in VS Code.
 2. Install the Live Server extension if needed.
-3. Right-click `emailsettings.html` and choose "Open with Live Server".
+3. Right-click `index.html` and choose "Open with Live Server".
 4. Use the local URL provided by Live Server to view the page.
 
 ### Deploy with GitHub Pages

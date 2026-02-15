@@ -114,31 +114,41 @@
 		</main>
 
 		<script>
-			const toggleAll = document.querySelector("#toggleAll");
-			const preferenceBoxes = Array.from(
-				document.querySelectorAll(".preference")
-			);
+			(() => {
+				const toggleAll = document.querySelector("#toggleAll");
+				const preferenceBoxes = Array.from(
+					document.querySelectorAll(".preference")
+				);
 
-			const updateToggleAll = () => {
-				const checkedCount = preferenceBoxes.filter((box) => box.checked)
-					.length;
-				toggleAll.checked = checkedCount === preferenceBoxes.length;
-				toggleAll.indeterminate =
-					checkedCount > 0 && checkedCount < preferenceBoxes.length;
-			};
+				if (!toggleAll || preferenceBoxes.length === 0) {
+					return;
+				}
 
-			toggleAll.addEventListener("change", (event) => {
-				const { checked } = event.target;
-				preferenceBoxes.forEach((box) => {
-					box.checked = checked;
+				const updateToggleAll = () => {
+					const checkedCount = preferenceBoxes.filter((box) => box.checked)
+						.length;
+					toggleAll.checked = checkedCount === preferenceBoxes.length;
+					toggleAll.indeterminate =
+						checkedCount > 0 && checkedCount < preferenceBoxes.length;
+				};
+
+				const setAllPreferences = (isChecked) => {
+					preferenceBoxes.forEach((box) => {
+						box.checked = isChecked;
+					});
+					updateToggleAll();
+				};
+
+				toggleAll.addEventListener("change", (event) => {
+					setAllPreferences(event.target.checked);
 				});
-			});
 
-			preferenceBoxes.forEach((box) => {
-				box.addEventListener("change", updateToggleAll);
-			});
+				preferenceBoxes.forEach((box) => {
+					box.addEventListener("change", updateToggleAll);
+				});
 
-			updateToggleAll();
+				updateToggleAll();
+			})();
 		</script>
 	</body>
 </html>

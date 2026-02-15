@@ -12,24 +12,24 @@
 		/>
 	</head>
 	<body>
-		<main class="py-5">
-			<div class="container">
+		<main class="py-4 py-md-5">
+			<div class="container px-3">
 				<div class="row justify-content-center">
-					<div class="col-12 col-lg-8">
+					<div class="col-12 col-md-10 col-lg-8">
 						<div class="card shadow-sm">
-							<div class="card-body p-4 p-md-5">
+							<div class="card-body p-4 p-lg-5">
 								<h1 class="h3 mb-4 text-center">Email Preferences</h1>
 								<form
 									action="https://www.w3schools.com/action_page.php"
 									method="POST"
 								>
-									<div class="form-check mb-3">
+									<div class="form-check bg-body-tertiary border rounded-3 ps-5 p-3 mb-3">
 										<input
 											class="form-check-input"
 											type="checkbox"
 											id="toggleAll"
 										/>
-										<label class="form-check-label" for="toggleAll">
+										<label class="form-check-label fw-semibold" for="toggleAll">
 											Select / Deselect All
 										</label>
 									</div>
@@ -39,7 +39,7 @@
 											Choose the email communications you want to receive
 										</legend>
 
-										<div class="form-check mb-2">
+										<div class="form-check mb-3">
 											<input
 												class="form-check-input preference"
 												type="checkbox"
@@ -52,7 +52,7 @@
 											</label>
 										</div>
 
-										<div class="form-check mb-2">
+										<div class="form-check mb-3">
 											<input
 												class="form-check-input preference"
 												type="checkbox"
@@ -65,7 +65,7 @@
 											</label>
 										</div>
 
-										<div class="form-check mb-2">
+										<div class="form-check mb-3">
 											<input
 												class="form-check-input preference"
 												type="checkbox"
@@ -92,8 +92,11 @@
 										</div>
 									</fieldset>
 
-									<div class="mt-4 d-grid">
-										<button type="submit" class="btn btn-primary">
+									<div class="mt-4 d-grid d-md-flex justify-content-md-end">
+										<button
+											type="submit"
+											class="btn btn-primary px-4 py-2 fw-semibold"
+										>
 											Save Preferences
 										</button>
 									</div>

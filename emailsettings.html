@@ -4,65 +4,105 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Email Preferences</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
 	</head>
 	<body>
-		<main>
-			<h1>Email Preferences</h1>
-			<form
-				action="https://www.w3schools.com/action_page.php"
-				method="POST"
-			>
-				<label>
-					<input type="checkbox" id="toggleAll" />
-					Select / Deselect All
-				</label>
+		<main class="py-5">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-8">
+						<div class="card shadow-sm">
+							<div class="card-body p-4 p-md-5">
+								<h1 class="h3 mb-4 text-center">Email Preferences</h1>
+								<form
+									action="https://www.w3schools.com/action_page.php"
+									method="POST"
+								>
+									<div class="form-check mb-3">
+										<input
+											class="form-check-input"
+											type="checkbox"
+											id="toggleAll"
+										/>
+										<label class="form-check-label" for="toggleAll">
+											Select / Deselect All
+										</label>
+									</div>
 
-				<fieldset>
-					<legend>Choose the email communications you want to receive</legend>
+									<fieldset class="border rounded-3 p-3">
+										<legend class="float-none w-auto px-2 fs-6">
+											Choose the email communications you want to receive
+										</legend>
 
-					<label>
-						<input
-							type="checkbox"
-							name="criticalAlerts"
-							value="yes"
-							class="preference"
-						/>
-						Critical alerts and notifications about your tax return
-					</label>
+										<div class="form-check mb-2">
+											<input
+												class="form-check-input preference"
+												type="checkbox"
+												name="criticalAlerts"
+												value="yes"
+												id="criticalAlerts"
+											/>
+											<label class="form-check-label" for="criticalAlerts">
+												Critical alerts and notifications about your tax return
+											</label>
+										</div>
 
-					<label>
-						<input
-							type="checkbox"
-							name="specialOffers"
-							value="yes"
-							class="preference"
-						/>
-						Information about special offers for tax services
-					</label>
+										<div class="form-check mb-2">
+											<input
+												class="form-check-input preference"
+												type="checkbox"
+												name="specialOffers"
+												value="yes"
+												id="specialOffers"
+											/>
+											<label class="form-check-label" for="specialOffers">
+												Information about special offers for tax services
+											</label>
+										</div>
 
-					<label>
-						<input
-							type="checkbox"
-							name="irsNotifications"
-							value="yes"
-							class="preference"
-						/>
-						Receive notifications of IRS changes and deadlines
-					</label>
+										<div class="form-check mb-2">
+											<input
+												class="form-check-input preference"
+												type="checkbox"
+												name="irsNotifications"
+												value="yes"
+												id="irsNotifications"
+											/>
+											<label class="form-check-label" for="irsNotifications">
+												Receive notifications of IRS changes and deadlines
+											</label>
+										</div>
 
-					<label>
-						<input
-							type="checkbox"
-							name="monthlyNewsletter"
-							value="yes"
-							class="preference"
-						/>
-						Learn from a monthly tax newsletter with tax news and tips
-					</label>
-				</fieldset>
+										<div class="form-check">
+											<input
+												class="form-check-input preference"
+												type="checkbox"
+												name="monthlyNewsletter"
+												value="yes"
+												id="monthlyNewsletter"
+											/>
+											<label class="form-check-label" for="monthlyNewsletter">
+												Learn from a monthly tax newsletter with tax news and tips
+											</label>
+										</div>
+									</fieldset>
 
-				<button type="submit">Save Preferences</button>
-			</form>
+									<div class="mt-4 d-grid">
+										<button type="submit" class="btn btn-primary">
+											Save Preferences
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 
 		<script>

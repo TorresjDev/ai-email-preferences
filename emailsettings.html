@@ -10,20 +10,56 @@
 			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
 			crossorigin="anonymous"
 		/>
+		<style>
+			body {
+				background: linear-gradient(180deg, #f6f8fc 0%, #ffffff 55%);
+			}
+
+			.page-fade {
+				animation: pageFade 320ms ease-out;
+			}
+
+			@keyframes pageFade {
+				from {
+					opacity: 0;
+					transform: translateY(6px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.form-check-input:focus {
+				box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+			}
+
+			.form-check-input:checked {
+				transform: scale(1.04);
+			}
+
+			.form-check-input:indeterminate {
+				background-color: #0d6efd;
+				border-color: #0d6efd;
+				box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.12);
+			}
+
+
+		</style>
 	</head>
 	<body>
-		<main class="py-4 py-md-5">
+		<main class="py-4 py-md-5 page-fade">
 			<div class="container px-3">
 				<div class="row justify-content-center">
 					<div class="col-12 col-md-10 col-lg-8">
-						<div class="card shadow-sm">
+						<div class="card shadow-sm lift">
 							<div class="card-body p-4 p-lg-5">
 								<h1 class="h3 mb-4 text-center">Email Preferences</h1>
 								<form
 									action="https://www.w3schools.com/action_page.php"
 									method="POST"
 								>
-									<div class="form-check bg-body-tertiary border rounded-3 ps-5 p-3 mb-3">
+									<div class="form-check bg-body-tertiary border rounded-3 ps-5 p-3 mb-4">
 										<input
 											class="form-check-input"
 											type="checkbox"
@@ -39,12 +75,12 @@
 										</div>
 									</div>
 
-									<fieldset class="border rounded-3 p-3">
+									<fieldset class="border rounded-3 p-3 p-md-4">
 										<legend class="float-none w-auto px-2 fs-6">
 											Choose the email communications you want to receive
 										</legend>
 
-										<div class="form-check mb-3">
+										<div class="form-check mb-3 d-flex align-items-start gap-2">
 											<input
 												class="form-check-input preference"
 												type="checkbox"
@@ -57,7 +93,7 @@
 											</label>
 										</div>
 
-										<div class="form-check mb-3">
+										<div class="form-check mb-3 d-flex align-items-start gap-2">
 											<input
 												class="form-check-input preference"
 												type="checkbox"
@@ -70,7 +106,7 @@
 											</label>
 										</div>
 
-										<div class="form-check mb-3">
+										<div class="form-check mb-3 d-flex align-items-start gap-2">
 											<input
 												class="form-check-input preference"
 												type="checkbox"
@@ -83,7 +119,7 @@
 											</label>
 										</div>
 
-										<div class="form-check">
+										<div class="form-check d-flex align-items-start gap-2">
 											<input
 												class="form-check-input preference"
 												type="checkbox"
@@ -100,11 +136,15 @@
 									<div class="mt-4 d-grid d-md-flex justify-content-md-end">
 										<button
 											type="submit"
-											class="btn btn-primary px-4 py-2 fw-semibold"
+											class="btn btn-outline-primary px-4 py-2 fw-semibold"
 										>
 											Save Preferences
 										</button>
 									</div>
+									<p class="mt-2 mb-0 text-muted small">
+										You may leave all options unchecked if you prefer not to receive
+										any email communications.
+									</p>
 								</form>
 							</div>
 						</div>
